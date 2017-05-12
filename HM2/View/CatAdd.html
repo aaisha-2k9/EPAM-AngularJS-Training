@@ -1,0 +1,22 @@
+
+<html ng-app="CatApp">
+<head>
+    <script type="text/javascript" src="D:\AngularJSHM\HM2\Scripts\angular.min.js"></script> 
+    <script type="text/javascript" src="D:\AngularJSHM\HM2\Scripts\app.js"></script>
+    <script type="text/javascript" src="D:\AngularJSHM\HM2\Controller\CatController.js"></script>
+</head>
+<body ng-controller="CatAppController">
+    <form name="myForm">
+        <table border="1">
+            <tbody width="700px">
+                <tr><td width="50%">Cat Name: </td><td><input type="text" ng-model="CatName" id="CatName" required></td></tr>
+                <tr><td width="50%">URL: </td><td><input type="url" ng-model="url" id="url" required></td></tr>
+            </tbody> 
+        </table>
+        <div style="padding-top:50px;">
+            <input type="button"  value ="Save" ng-disabled="myForm.$invalid" >
+            <input type="button"  value ="Cancel">
+        </div>           
+    </form>
+</body>
+</html>

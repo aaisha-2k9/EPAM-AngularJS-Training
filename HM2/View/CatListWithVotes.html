@@ -1,0 +1,26 @@
+
+<html ng-app="CatApp">
+<head>
+    <script type="text/javascript" src="D:\AngularJSHM\HM2\Scripts\angular.min.js"></script> 
+    <script type="text/javascript" src="D:\AngularJSHM\HM2\Scripts\app.js"></script>
+    <script type="text/javascript" src="D:\AngularJSHM\HM2\Controller\CatController.js"></script>
+</head>
+<body ng-controller="CatAppController">           
+    <div ng-repeat="Cat in Cats">
+    <br><br>  
+        <table>
+            <tbody >
+                <tr><td> <a  href ng-click="CatClck($index)">{{Cat.name}}</a> {{Cat.CatCnt}}</td> 
+                    <div ng-show = "Cat.CatClicked">
+                    <span>&#10003</span>
+                <img src="D:\AngularJSHM\HM2\images\Cat2.png" >   <br>             
+                <a href ng-click="CatClickerincrement(Cat.CatCnt,$index )">&#9650</a>
+               <br>
+                <a href ng-click="CatClickerdecrement(Cat.CatCnt,$index)"> &#9660</a>
+                </div>
+                </tr>
+            </tbody>
+        </table>
+    </div>        
+</body>
+</html>
