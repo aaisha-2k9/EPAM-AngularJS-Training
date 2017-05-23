@@ -1,0 +1,56 @@
+<html>
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+<script type="text/javascript" src="D:\AngularJSHM\HM2\Scripts\angular.min.js"></script> 
+
+    <script src="http://underscorejs.org/underscore.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <script src="D:\AngularJSHM\HM2\Scripts/app.js"></script>
+
+    <script src="D:\AngularJSHM\HM2\Controller/catsearchcontroller.js"></script>
+
+</head>
+
+<body ng-app="CatApp">
+    <h1>Cat Search</h1>
+
+    <div ng-controller="catsearchcontroller as vm">
+        <div class="row">
+
+            <div class="input-group col-md-6 col-md-offset-3">
+
+                <input class="form-control" ng-model="vm.searchText" placeholder="Search" type="search" />
+
+                <span class="input-group-addon btn">
+                    <button class="fa fa-search" ng-click="vm.search()"></button>
+                    <select name="vm.selectedvalue" ng-model="vm.selectedvalue" ng-dropdown required ng-change="vm.search()">
+                        <option></option>
+                    <option value="asc">Ascending</option>
+                    <option value="dsc">Decending</option></select>
+                    <select name="selectedvalue" ng-model="vm.selectedvalue" ng-change="vm.search()">
+      <option value="asc">Option 1</option>
+      <option value="dsc">Option 2</option>
+    </select>
+                     <tt>singleSelect = {{vm.selectedvalue}}</tt>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul>                    
+                    <li ng-repeat="cat in vm.cats track by $index">
+                        <div class="col-md-2">
+                            {{cat.name}}
+                            <a><img ng-src="{{cat.url}}"  class="imagesize"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
